@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  Arr = Array; //Array type captured in a variable
+  num:number = 10;
 }
