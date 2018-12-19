@@ -6,13 +6,17 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild('valueInput') valueInput: ElementRef;
+  @ViewChild('amountInput') amountInput: ElementRef;
 
   title = 'app';
   Arr = Array; // Array type captured in a variable
   num: number = 10;
 
   onPressMe(value: Number) {
-    this.valueInput.nativeElement.value = value;
+    if (this.amountInput.nativeElement.value === '$0') {
+      this.amountInput.nativeElement.value = '$' + value;
+    } else {
+      this.amountInput.nativeElement.value = this.amountInput.nativeElement.value + value;
+    }
   }
 }
