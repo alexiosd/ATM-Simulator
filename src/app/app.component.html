@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <div><input type="text" style="width:250px;flex:none;" class="form-control" value="$0" #searchField placeholder="Amount" (keyup.enter)="onSearch(searchField.value)" aria-describedby="basic-addon1"></div>
-  <button *ngFor="let i of Arr(num).fill(1), let x = index" type="button" class="btn btn-default btn-circle" (click)="onSearch(searchField.value)">{{x+1}}</button>
+  <div><input #amountInput [(ngModel)]="amountVar" type="text" style="width:250px;flex:none;" class="form-control" value="$0" #searchField placeholder="Amount" (keyup.enter)="onSearch(searchField.value)" aria-describedby="basic-addon1"></div>
+  <button *ngFor="let i of Arr(num).fill(1), let x = index" type="button" class="btn btn-default btn-circle" (click)="onPressMe(x+1)">{{x+1}}</button>
 </div>
 
