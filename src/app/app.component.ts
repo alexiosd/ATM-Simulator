@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,8 @@ export class AppComponent implements OnInit {
   title = 'app';
   Arr = Array; // Array type captured in a variable
   num: number = 9;
+
+  constructor(private httpClient: HttpClient) {}
 
   ngOnInit() {
   }
@@ -32,5 +35,18 @@ export class AppComponent implements OnInit {
     } else {
       this.amountInput = 0;
     }
+  }
+
+  withdraw() {
+    this.httpClient
+    .post('https://us-central1-atm-backend-2cc1b.cloudfunctions.net/withdraw', {'amount': this.amountInput})
+    .subscribe(
+      data => {
+        console.log('POST Request is successful ', data);
+      },
+      error => {
+        console.log('Error', error);
+      }
+    );
   }
 }

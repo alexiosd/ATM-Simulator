@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgxCurrencyModule } from 'ngx-currency';
 
 export const customCurrencyMaskConfig = {
@@ -26,7 +27,8 @@ export const customCurrencyMaskConfig = {
     CommonModule,
     BrowserModule,
     FormsModule,
-    NgxCurrencyModule.forRoot(customCurrencyMaskConfig)
+    NgxCurrencyModule.forRoot(customCurrencyMaskConfig),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
