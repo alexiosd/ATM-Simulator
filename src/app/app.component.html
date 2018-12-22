@@ -2,5 +2,6 @@
   <div><input currencyMask [(ngModel)]="amountInput" type="text" style="width:250px;flex:none;" class="form-control" value="$0" placeholder="$0" aria-describedby="basic-addon1"></div>
   <button *ngFor="let i of Arr(num).fill(1), let x = index" type="button" class="btn btn-default btn-circle" (click)="onPressMe(x+1)">{{x+1}}</button>
   <button type="button" class="btn btn-default btn-circle" (click)="onPressMe(0)">0</button>
+  <button type="button" class="btn btn-default btn-circle" (click)="onDelete()">&#x232B;</button>
 </div>
 

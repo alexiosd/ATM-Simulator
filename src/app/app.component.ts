@@ -23,4 +23,14 @@ export class AppComponent implements OnInit {
       this.amountInput = conc * 1;
     }
   }
+
+  onDelete() {
+    if (this.amountInput > 9) {
+      let theAmount = this.amountInput.toString();
+      theAmount = theAmount.slice(0, theAmount.length - 1);
+      this.amountInput = theAmount * 1;
+    } else {
+      this.amountInput = 0;
+    }
+  }
 }
