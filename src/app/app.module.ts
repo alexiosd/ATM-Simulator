@@ -4,7 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
+import { NgxCurrencyModule } from 'ngx-currency';
 
+export const customCurrencyMaskConfig = {
+  align: 'right',
+  allowNegative: true,
+  allowZero: true,
+  decimal: '.',
+  precision: 0,
+  prefix: '$',
+  suffix: '',
+  thousands: ',',
+  nullable: true
+};
 
 @NgModule({
   declarations: [
@@ -13,7 +25,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    NgxCurrencyModule.forRoot(customCurrencyMaskConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

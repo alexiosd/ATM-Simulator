@@ -4061,6 +4061,11 @@ next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
 
+ngx-currency@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/ngx-currency/-/ngx-currency-1.5.1.tgz#c160936cb7b6566e606812fd64305c1a7b93c896"
+  integrity sha512-Qfk4BcpmcZ7xZZac+FEb5mYvJ4a4IGlxfS4E2ololwo5/EByTBBS3mAHoZKZ33vqI0HNQQ4lYkE+V6vsa661VQ==
+
 no-case@^2.2.0:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/no-case/-/no-case-2.3.2.tgz#60b813396be39b3f1288a4c1ed5d1e7d28b464ac"
