@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule, ElementRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxCurrencyModule } from 'ngx-currency';
+import { MatFormFieldModule, MatInputModule, MatDialogModule } from '@angular/material';
+import { AppComponent, AppSuccessComponent } from './app.component';
 
 export const customCurrencyMaskConfig = {
   align: 'right',
@@ -21,16 +23,22 @@ export const customCurrencyMaskConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppSuccessComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
     NgxCurrencyModule.forRoot(customCurrencyMaskConfig),
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ AppSuccessComponent ],
+  bootstrap: [ AppComponent ],
+  entryComponents: [ AppSuccessComponent ]
 })
 export class AppModule { }

@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+
+export interface DialogData {
+  banknotes: Array<Object>;
+}
 
 @Component({
   selector: 'app-root',
@@ -8,12 +13,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
 
-  amountInput: number = 0;
+  amountInput = 0;
   title = 'app';
   Arr = Array; // Array type captured in a variable
-  num: number = 9;
+  num = 9;
 
-  constructor(private httpClient: HttpClient) {}
+  banknotes: Array<Object>;
+  name: string;
+
+  constructor(private httpClient: HttpClient, public dialog: MatDialog) {}
 
   ngOnInit() {
   }
@@ -22,7 +30,7 @@ export class AppComponent implements OnInit {
     if ((this.amountInput === 0) && (value !== 0)) {
       this.amountInput = value;
     } else {
-      let conc = this.amountInput.toString() + value;
+      const conc = this.amountInput.toString() + value;
       this.amountInput = conc * 1;
     }
   }
@@ -43,10 +51,30 @@ export class AppComponent implements OnInit {
     .subscribe(
       data => {
         console.log('POST Request is successful ', data);
+        const dialogRef = this.dialog.open(AppSuccessComponent, {
+          width: '250px',
+          data: {banknotes: data}
+        });
       },
       error => {
         console.log('Error', error);
       }
     );
   }
+}
+
+@Component({
+  selector: 'app-success',
+  templateUrl: 'app.success.component.html',
+})
+export class AppSuccessComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<AppSuccessComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
 }

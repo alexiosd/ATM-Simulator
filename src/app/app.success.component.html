@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Success</h1>
+<div mat-dialog-content>
+  <p>Please take your cash</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.banknotes">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.banknotes" cdkFocusInitial>Close</button>
+</div>
