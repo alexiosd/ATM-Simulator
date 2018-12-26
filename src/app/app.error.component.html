@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>Error</h1>
 <div mat-dialog-content>
-  <p>{{data.error}}</p>
+  <p>{{data.error | errorCurrency}}</p>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Close</button>
