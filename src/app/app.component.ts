@@ -4,6 +4,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 export interface DialogData {
   banknotes: Array<Object>;
+  error: string;
 }
 
 @Component({
@@ -20,6 +21,7 @@ export class AppComponent implements OnInit {
 
   banknotes: Array<Object>;
   name: string;
+  error: string;
 
   constructor(private httpClient: HttpClient, public dialog: MatDialog) {}
 
@@ -58,6 +60,10 @@ export class AppComponent implements OnInit {
       },
       error => {
         console.log('Error', error);
+        const dialogRef = this.dialog.open(AppErrorComponent, {
+          width: '350px',
+          data: {error: error.error}
+        });
       }
     );
   }
@@ -71,6 +77,22 @@ export class AppSuccessComponent {
 
   constructor(
     public dialogRef: MatDialogRef<AppSuccessComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+}
+
+@Component({
+  selector: 'app-error',
+  templateUrl: 'app.error.component.html',
+})
+export class AppErrorComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<AppErrorComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 
   onNoClick(): void {

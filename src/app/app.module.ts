@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { MatFormFieldModule, MatInputModule, MatDialogModule } from '@angular/material';
-import { AppComponent, AppSuccessComponent } from './app.component';
+import { AppComponent, AppSuccessComponent, AppErrorComponent } from './app.component';
 
 export const customCurrencyMaskConfig = {
   align: 'right',
@@ -24,7 +24,8 @@ export const customCurrencyMaskConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    AppSuccessComponent
+    AppSuccessComponent,
+    AppErrorComponent
   ],
   imports: [
     CommonModule,
@@ -37,8 +38,8 @@ export const customCurrencyMaskConfig = {
     MatInputModule,
     MatDialogModule
   ],
-  providers: [ AppSuccessComponent ],
+  providers: [ AppSuccessComponent, AppErrorComponent ],
   bootstrap: [ AppComponent ],
-  entryComponents: [ AppSuccessComponent ]
+  entryComponents: [ AppSuccessComponent, AppErrorComponent ]
 })
 export class AppModule { }
