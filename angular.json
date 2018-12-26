@@ -18,7 +18,8 @@
             "polyfills": "src/polyfills.ts",
             "assets": [
               "src/assets",
-              "src/favicon.ico"
+              "src/favicon.ico",
+              "src/svg/si-glyph-money-3.svg"
             ],
             "styles": [
               "src/styles.css"

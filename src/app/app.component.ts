@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
       this.amountInput = value;
     } else {
       const conc = this.amountInput.toString() + value;
-      this.amountInput = conc * 1;
+      this.amountInput = +conc * 1;
     }
   }
 
@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
     if (this.amountInput > 9) {
       let theAmount = this.amountInput.toString();
       theAmount = theAmount.slice(0, theAmount.length - 1);
-      this.amountInput = theAmount * 1;
+      this.amountInput = +theAmount * 1;
     } else {
       this.amountInput = 0;
     }
