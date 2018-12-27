@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { MatFormFieldModule, MatInputModule, MatDialogModule } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
 import { AppComponent, AppSuccessComponent, AppErrorComponent } from './app.component';
 import { ErrorCurrencyPipe } from './error-currency.pipe';
 
@@ -38,7 +39,8 @@ export const customCurrencyMaskConfig = {
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule
   ],
   providers: [ AppSuccessComponent, AppErrorComponent ],
   bootstrap: [ AppComponent ],
