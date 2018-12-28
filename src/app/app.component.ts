@@ -2,8 +2,13 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
+export interface Banknote {
+  banknoteValue: number;
+  quantity: number;
+}
+
 export interface DialogData {
-  banknotes: Array<Object>;
+  banknotes: Array<Banknote>;
   error: string;
 }
 
@@ -18,10 +23,6 @@ export class AppComponent implements OnInit {
   title = 'app';
   Arr = Array; // Array type captured in a variable
   num = 9;
-
-  banknotes: Array<Object>;
-  name: string;
-  error: string;
 
   constructor(private httpClient: HttpClient, public dialog: MatDialog) {}
 
@@ -55,14 +56,14 @@ export class AppComponent implements OnInit {
         console.log('POST Request is successful ', data);
         const dialogRef = this.dialog.open(AppSuccessComponent, {
           width: '250px',
-          data: {banknotes: data}
+          data: data
         });
       },
       error => {
         console.log('Error', error);
         const dialogRef = this.dialog.open(AppErrorComponent, {
           width: '350px',
-          data: {error: error.error}
+          data: error.error
         });
       }
     );

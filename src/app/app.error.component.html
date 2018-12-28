@@ -1,7 +1,9 @@
 <h1 mat-dialog-title>Error</h1>
-<div mat-dialog-content>
-  <p>{{data.error | errorCurrency}}</p>
+<mat-divider style="width: 350px; margin: 0 0 0 -25px;"></mat-divider>
+<div mat-dialog-content style="padding-top: 16px;">
+  <p>{{data | errorCurrency}}</p>
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Close</button>
+<mat-divider style="width: 350px; margin: 0 0 0 -25px;"></mat-divider>
+<div mat-dialog-actions style="display: block; text-align: right;">
+  <button type="button" class="btn btn-secondary" (click)="onNoClick()">Close</button>
 </div>

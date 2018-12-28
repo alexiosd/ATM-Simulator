@@ -1,11 +1,13 @@
 <h1 mat-dialog-title>Success</h1>
-<div mat-dialog-content>
+<mat-divider style="width: 250px; margin: 0 0 0 -25px;"></mat-divider>
+<div mat-dialog-content style="padding-top: 16px; padding-bottom: 16px;">
   <p>Please take your cash</p>
-  <div *ngFor="let i of data.banknotes, let x = index" style="display: table-row">
+  <div *ngFor="let i of data, let x = index" style="display: table-row">
     <div style="display: table-cell"><img src="svg/si-glyph-money-3.svg" width="15"> ${{i.banknoteValue}}</div>
     <div style="display: table-cell"> x {{i.quantity}}</div>
   </div>
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Close</button>
+<mat-divider style="width: 250px; margin: 0 0 0 -25px;"></mat-divider>
+<div mat-dialog-actions style="display: block; text-align: right;">
+  <button type="button" class="btn btn-secondary" (click)="onNoClick()">Close</button>
 </div>

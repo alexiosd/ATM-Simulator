@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule, ElementRef } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxCurrencyModule } from 'ngx-currency';
-import { MatFormFieldModule, MatInputModule, MatDialogModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatDialogModule, MatDividerModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { AppComponent, AppSuccessComponent, AppErrorComponent } from './app.component';
 import { ErrorCurrencyPipe } from './error-currency.pipe';
@@ -40,7 +40,8 @@ export const customCurrencyMaskConfig = {
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule
   ],
   providers: [ AppSuccessComponent, AppErrorComponent ],
   bootstrap: [ AppComponent ],
