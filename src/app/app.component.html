@@ -1,8 +1,8 @@
 <mat-card class="main-card">
     <div><input currencyMask [(ngModel)]="amountInput" type="text" class="form-control display" value="$0" placeholder="$0" aria-describedby="basic-addon1"></div>
-    <button *ngFor="let i of Arr(num).fill(1), let x = index" type="button" class="btn btn-default btn-circle numbers" (click)="onPressMe(x+1)">{{x+1}}</button>
-    <button type="button" class="btn btn-default btn-circle numbers zero" (click)="onPressMe(0)">0</button>
-    <button type="button" class="btn btn-default btn-circle numbers" (click)="onDelete()">&#x232B;</button>
-    <button type="button" class="btn btn-default withdraw" (click)="withdraw()">withdraw</button>
+    <button *ngFor="let i of Arr(num).fill(1), let x = index" type="button" class="btn btn-light btn-circle numbers" (click)="onPressMe(x+1)">{{x+1}}</button>
+    <button type="button" class="btn btn-light btn-circle numbers zero" (click)="onPressMe(0)">0</button>
+    <button type="button" class="btn btn-light btn-circle numbers" (click)="onDelete()">&#x232B;</button>
+    <button type="button" class="btn btn-outline-primary withdraw" (click)="withdraw()">withdraw</button>
 </mat-card>
 
